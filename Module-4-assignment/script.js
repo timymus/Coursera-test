@@ -1,17 +1,12 @@
-require('./SpeakHello.js');
-require('./SpeakGoodbye.js');
-
-(function (window) {
+(function () {
     var names = ["Mohamed", "jamal", "Mustapha", "jaffar", "youssef", "Sarah", "Amine", "Jallal", "Farid"];
 
     for (var i = 0; i < names.length; i++) {
-        var name = names[i];
-        
-       
-        if (name.charAt(0).toLowerCase() === 'j') {
-            jamalGreeter.sayGoodbye(name);
+        var firstLetter = names[i].charAt(0).toLowerCase();
+        if (firstLetter === 'j') {
+            byeSpeaker.speak(names[i]);
         } else {
-          youssefGreeter.sayHello(name);
+            helloSpeaker.speak(names[i]);
         }
     }
 })();
